@@ -8,11 +8,11 @@ class Content extends Component {
     render() {
         return(
             <div className="content">
-               <a href='https://mrinalrai.in/'>
-                My Porfolio
+               <a href='https://developers.google.com/web/updates/2018/07/page-lifecycle-api'>
+                Page lifecycle
                 </a> 
-                <a href='https://mrinalrai.in/Resume.pdf'>
-                    My Resume
+                <a href='https://blog.bessereau.eu/assets/pdfs/canvas_framework.pdf'>
+                    Salesforce canvas guide
                 </a>
             </div>
         )
