@@ -1,15 +1,21 @@
 import React, { Component} from 'react';
 import Content from '../Container/Content';
-
+import { isChrome } from 'react-device-detect';
 class ClickAnalytics extends Component {
     constructor(props) {
         super(props);
         this.STORAGE_KEY = 'lifecycle-state:' + window.location.pathname;
         this.state = {
-          events: JSON.parse(window.localStorage.getItem(this.STORAGE_KEY))
+          events: JSON.parse(window.localStorage.getItem(this.STORAGE_KEY)),
+          isChrome: 'This is not chrome'
         }
     }
     componentDidMount() {
+      if (isChrome) {
+        this.setState({
+          isChrome: 'This is chrome'
+        })
+      }
         const events = [
           'focus',
           'blur',
@@ -86,6 +92,7 @@ class ClickAnalytics extends Component {
     render() {
         return(
             <div>
+              <p>{this.state.isChrome}</p>
             <Content></Content>
             <button onClick={this.clearStoredState}>Clear!</button>
               {
